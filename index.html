@@ -186,48 +186,100 @@ And if you'll let me… I'd really love to call you mine.
 <footer>Made with too much love by Ungkrr, for Aurora ♡</footer>
 
 <script>
-function startLove(){
-  document.getElementById('intro').classList.add('hide');
-  const c=document.getElementById('countdown');
-  c.classList.remove('hide');
-  let n=3;
-  const el=document.getElementById('countNumber');
-  el.textContent=n;
-  const timer=setInterval(()=>{
-    n--;
-    if(n<=0){
-      clearInterval(timer);
-      c.classList.add('hide');
-      document.body.classList.add('started');
-      window.scrollTo({top:0,behavior:'smooth'});
-    }else el.textContent=n;
-  },850);
-}
-function sayYes(){
-  document.getElementById('answer').classList.add('show');
-  for(let i=0;i<55;i++) setTimeout(makeHeart,i*35);
-  document.getElementById('answer').scrollIntoView({behavior:'smooth',block:'center'});
-}
-function moveNo(){
-  const b=document.getElementById('noBtn');
-  b.style.position='fixed';
-  b.style.left=(8+Math.random()*78)+'vw';
-  b.style.top=(12+Math.random()*76)+'vh';
-  b.textContent=['Are you sure? 🥺','Try again 🙈','No escape! 😂','Think about it… 💗'][Math.floor(Math.random()*4)];
-}
-function makeHeart(){
-  const h=document.createElement('div'); h.className='heart';
-  h.textContent=['♡','♥','✦','✧','❀'][Math.floor(Math.random()*5)];
-  h.style.left=Math.random()*100+'vw'; h.style.fontSize=(12+Math.random()*25)+'px';
-  h.style.animationDuration=(4+Math.random()*5)+'s'; document.body.appendChild(h);
-  setTimeout(()=>h.remove(),9000);
-}
-setInterval(makeHeart,1200);
+function startLove() {
+    const intro = document.getElementById("intro");
+    const countdown = document.getElementById("countdown");
+    const number = document.getElementById("countNumber");
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-},{threshold:.15});
-document.querySelectorAll('section').forEach(s=>observer.observe(s));
+    intro.classList.add("hide");
+    countdown.classList.remove("hide");
+
+    let count = 3;
+    number.textContent = count;
+
+    function nextCount() {
+        count--;
+
+        if (count > 0) {
+            number.textContent = count;
+            setTimeout(nextCount, 1000);
+        } else {
+            countdown.classList.add("hide");
+            document.body.classList.add("started");
+            window.scrollTo(0, 0);
+        }
+    }
+
+    setTimeout(nextCount, 1000);
+}
+
+function sayYes() {
+    document.getElementById("answer").classList.add("show");
+
+    for (let i = 0; i < 55; i++) {
+        setTimeout(makeHeart, i * 35);
+    }
+
+    document.getElementById("answer").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+}
+
+function moveNo() {
+    const button = document.getElementById("noBtn");
+
+    button.style.position = "fixed";
+    button.style.left = (8 + Math.random() * 78) + "vw";
+    button.style.top = (12 + Math.random() * 76) + "vh";
+
+    const texts = [
+        "Are you sure? 🥺",
+        "Try again 🙈",
+        "No escape! 😂",
+        "Think about it… 💗"
+    ];
+
+    button.textContent = texts[
+        Math.floor(Math.random() * texts.length)
+    ];
+}
+
+function makeHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+
+    const symbols = ["♡", "♥", "✦", "✧", "❀"];
+    heart.textContent = symbols[
+        Math.floor(Math.random() * symbols.length)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (12 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 9000);
+}
+
+setInterval(makeHeart, 1200);
+
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll("section").forEach(function(section) {
+    observer.observe(section);
+});
 </script>
 </body>
 </html>
