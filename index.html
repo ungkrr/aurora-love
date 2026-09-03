@@ -91,7 +91,7 @@ radial-gradient(circle at 50% 45%,#542b32 0,transparent 30%),#100a0b;transition:
   </div>
 </div>
 
-<div id="countdown" class="countdown">
+<div id="countdown" class="countdown hide">
   <div class="count-number" id="countNumber">3</div>
   <div class="count-text">for Aurora…</div>
 </div>
@@ -194,25 +194,22 @@ function startLove() {
     intro.classList.add("hide");
     countdown.classList.remove("hide");
 
-    let count = 3;
-    number.textContent = count;
+    number.textContent = "3";
 
-    function nextCount() {
-        count--;
+    setTimeout(function () {
+        number.textContent = "2";
+    }, 1000);
 
-        if (count > 0) {
-            number.textContent = count;
-            setTimeout(nextCount, 1000);
-        } else {
-            countdown.classList.add("hide");
-            document.body.classList.add("started");
-            window.scrollTo(0, 0);
-        }
-    }
+    setTimeout(function () {
+        number.textContent = "1";
+    }, 2000);
 
-    setTimeout(nextCount, 1000);
+    setTimeout(function () {
+        countdown.classList.add("hide");
+        document.body.classList.add("started");
+        window.scrollTo(0, 0);
+    }, 3000);
 }
-
 function sayYes() {
     document.getElementById("answer").classList.add("show");
 
