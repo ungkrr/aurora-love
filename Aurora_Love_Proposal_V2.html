@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Aurora ♡</title>
+<meta name="description" content="A little love letter for Aurora.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+:root{--bg:#160f10;--bg2:#241719;--pink:#f3a8b8;--cream:#fff6f1;--muted:#d9c1bd;--line:#6f4c50}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 20% 10%,#4a2528 0,transparent 28%),radial-gradient(circle at 80% 40%,#362022 0,transparent 30%),var(--bg);color:var(--cream);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff8 1px,transparent 1px);background-size:70px 70px;opacity:.12}
+nav{position:fixed;z-index:20;top:0;left:0;right:0;padding:18px 6vw;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(#160f10dd,transparent);backdrop-filter:blur(4px)}
+.logo{font-family:"Cormorant Garamond";font-size:25px}.logo span{color:var(--pink)}
+nav a{color:#fff;text-decoration:none;margin-left:24px;font-size:13px;opacity:.85}
+section{min-height:100vh;padding:110px 8vw;display:flex;align-items:center;justify-content:center;position:relative}
+.hero{min-height:100svh}
+.hero-inner{max-width:1150px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.kicker{font-family:"Cormorant Garamond";font-size:24px;color:var(--muted)}
+h1{font-family:"Cormorant Garamond";font-size:clamp(72px,12vw,150px);line-height:.78;margin:16px 0;color:var(--pink);font-weight:600}
+h2{font-family:"Cormorant Garamond";font-size:clamp(42px,6vw,76px);margin:0 0 20px;color:var(--pink)}
+p{line-height:1.85;color:var(--muted);font-size:16px}
+.hero p{font-size:19px;max-width:500px}
+.btn{display:inline-block;margin-top:22px;padding:14px 25px;border:1px solid var(--pink);border-radius:999px;background:#e98da433;color:#fff;text-decoration:none;transition:.25s}
+.btn:hover{transform:translateY(-3px);background:#e98da455}
+.frame{padding:13px;background:#f5eee5;box-shadow:0 20px 70px #0009;transform:rotate(2deg);max-width:480px;margin:auto}
+.frame img{display:block;width:100%;height:auto}
+.caption{text-align:center;color:#594246;font-family:"Cormorant Garamond";font-size:20px;padding:9px 0 1px}
+.story{background:linear-gradient(180deg,transparent,#24171988,transparent)}
+.story-grid{max-width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.quote{font-family:"Cormorant Garamond";font-size:29px;color:#f8d8dd;line-height:1.35;border-left:2px solid var(--pink);padding-left:25px}
+.gallery-wrap{max-width:1150px;width:100%}
+.center{text-align:center}
+.gallery{margin-top:35px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.polaroid{background:#f7eee7;padding:8px 8px 28px;box-shadow:0 12px 35px #0008;transition:.3s;transform:rotate(var(--r))}
+.polaroid:hover{transform:rotate(0) translateY(-8px) scale(1.02);z-index:2}
+.polaroid img{width:100%;aspect-ratio:9/14;object-fit:cover;display:block}
+.polaroid small{display:block;text-align:center;color:#61464b;margin-top:8px;font-family:"Cormorant Garamond";font-size:18px}
+.letter{max-width:950px;width:100%;background:#fff8f00c;border:1px solid #ffffff18;border-radius:28px;padding:55px;box-shadow:0 20px 80px #0005}
+.letter p{font-family:"Cormorant Garamond";font-size:25px;line-height:1.55;color:#f3dedb}
+.letter .sign{color:var(--pink);font-size:28px;margin-top:25px}
+.final{text-align:center;min-height:90vh}
+.final h2{max-width:850px}
+.question{font-family:"Cormorant Garamond";font-size:29px;color:#f7d8dc}
+.actions{display:flex;justify-content:center;gap:18px;margin-top:30px;position:relative}
+.yes,.no{font:600 15px "DM Sans";border-radius:999px;padding:16px 28px;cursor:pointer}
+.yes{border:0;background:var(--pink);color:#291517}.no{border:1px solid #8c676c;background:transparent;color:#fff}
+#answer{min-height:0;display:none;margin:30px auto 0;max-width:600px;padding:25px;border:1px solid #f3a8b855;border-radius:20px;background:#f3a8b810}
+#answer.show{display:block;animation:pop .5s ease}
+footer{text-align:center;padding:30px;color:#a98f91;font-size:12px}
+.heart{position:fixed;bottom:-30px;color:#f3a8b8;opacity:.55;animation:float 7s linear infinite;pointer-events:none}
+@keyframes float{to{transform:translateY(-115vh) rotate(360deg);opacity:0}}
+@keyframes pop{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}
+@media(max-width:800px){
+ nav{padding:15px 5vw}.links{display:none}
+ section{padding:95px 6vw}.hero-inner,.story-grid{grid-template-columns:1fr;gap:35px}
+ .hero-inner{direction:ltr}.frame{max-width:390px}.gallery{grid-template-columns:repeat(2,1fr);gap:12px}
+ .letter{padding:30px 22px}.letter p{font-size:21px}.quote{font-size:25px}
+}
+
+.intro,.countdown{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;text-align:center;background:
+radial-gradient(circle at 50% 45%,#542b32 0,transparent 30%),#100a0b;transition:opacity .9s,visibility .9s}
+.intro.hide,.countdown.hide{opacity:0;visibility:hidden;pointer-events:none}
+.intro-card{padding:45px 30px;max-width:650px;animation:rise 1.2s ease}
+.intro-mini{font-family:"Cormorant Garamond";font-size:22px;color:var(--muted)}
+.intro-title{font-family:"Cormorant Garamond";font-size:clamp(75px,15vw,150px);color:var(--pink);line-height:.9;margin:20px 0}
+.intro-sub{font-family:"Cormorant Garamond";font-size:24px;line-height:1.5;color:#f8e9e5}
+.start{margin-top:30px;padding:15px 28px;border-radius:999px;border:1px solid var(--pink);background:#f3a8b818;color:white;font:500 14px "DM Sans";cursor:pointer;transition:.25s}
+.start:hover{transform:translateY(-3px);background:#f3a8b83b}
+.count-number{font-family:"Cormorant Garamond";font-size:150px;color:var(--pink);animation:pulse 1s ease infinite}
+.count-text{font-family:"Cormorant Garamond";font-size:25px;color:var(--muted)}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.7}} @keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(35px);transition:1s ease}.reveal.visible{opacity:1;transform:none}
+.scroll-note{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);color:#bda5a5;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+@media(max-width:800px){.intro-sub{font-size:20px}.count-number{font-size:110px}}
+
+</style>
+</head>
+<body>
+<nav><div class="logo">♡ For you, <span>Aurora</span></div><div class="links">
+<a href="#story">Our Story</a><a href="#memories">Memories</a><a href="#letter">A Letter</a><a href="#you">For You</a>
+</div></nav>
+
+<div id="intro" class="intro">
+  <div class="intro-card">
+    <div class="intro-mini">A little something for you ♡</div>
+    <div class="intro-title">Aurora</div>
+    <div class="intro-sub">I made this because there are some things<br>I want to say to you.</div>
+    <button class="start" onclick="startLove()">Open it slowly ♡</button>
+  </div>
+</div>
+
+<div id="countdown" class="countdown">
+  <div class="count-number" id="countNumber">3</div>
+  <div class="count-text">for Aurora…</div>
+</div>
+
+<section class="hero">
+<div class="hero-inner">
+<div>
+<div class="kicker">To the most beautiful girl,</div>
+<h1>Aurora<span style="font-size:.45em">♡</span></h1>
+<p>You somehow became one of the most important parts of my days. So… I made this little corner of the internet just for you.</p>
+<a class="btn" href="#story">Open our story ↓</a>
+</div>
+<div class="frame">
+<img src="images/memory_01.jpg" alt="Aurora">
+<div class="caption">my favorite person ♡</div>
+</div>
+</div>
+<div class="scroll-note">scroll to continue ↓</div>
+</section>
+
+<section class="story" id="story"><div class="reveal" style="position:absolute;inset:0;pointer-events:none"></div>
+<div class="story-grid">
+<div>
+<h2>Our Story</h2>
+<div class="quote">“Five months of getting closer, getting annoyed, laughing, fighting… and somehow always finding our way back to each other.”</div>
+<p>We are far from perfect. We have had our arguments, misunderstandings, silly moments, and days when neither of us wanted to give in. But after all of that, we still choose to stay, talk, forgive, and care.</p>
+<p>And honestly, that means more to me than having a perfect story. I love the real one we have.</p>
+</div>
+<div class="frame" style="transform:rotate(-2deg)"><img src="images/memory_06.jpg" alt="A memory of Aurora"><div class="caption">still you. still us.</div></div>
+</div>
+</section>
+
+<section id="memories"><div class="reveal" style="position:absolute;inset:0;pointer-events:none"></div>
+<div class="gallery-wrap">
+<div class="center"><div class="kicker">little pieces of you</div><h2>Beautiful Memories</h2><p>Some of the faces I could never get tired of seeing.</p></div>
+<div class="gallery">
+<div class="polaroid" style="--r:-2deg"><img src="images/memory_01.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:1deg"><img src="images/memory_02.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:2deg"><img src="images/memory_03.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:-1deg"><img src="images/memory_04.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:1deg"><img src="images/memory_05.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:-2deg"><img src="images/memory_06.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:2deg"><img src="images/memory_07.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:-1deg"><img src="images/memory_08.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:1deg"><img src="images/memory_09.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:-2deg"><img src="images/memory_10.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:0deg"><img src="images/memory_11.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:2deg"><img src="images/memory_12.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:-1deg"><img src="images/memory_13.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:1deg"><img src="images/memory_14.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:-2deg"><img src="images/memory_15.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+<div class="polaroid" style="--r:1deg"><img src="images/memory_16.jpg" alt="Aurora memory"><small>memory ♡</small></div>
+</div>
+</div>
+</section>
+
+<section id="letter"><div class="reveal" style="position:absolute;inset:0;pointer-events:none"></div>
+<div class="letter">
+<div class="kicker">A Little Letter For You ♡</div>
+<h2>Dear Aurora,</h2>
+<p>
+Thank you for coming into my life and somehow making ordinary days feel a little more special.
+<br><br>
+These five months have taught me that love isn't about never fighting. It's about caring enough to come back, understanding each other, saying sorry, and choosing each other again.
+<br><br>
+I don't promise that we'll never argue. I don't promise that I'll always get everything right. But I can promise that I'll keep learning how to love you better, listen to you, make you laugh, and be there when things get hard.
+<br><br>
+I want more memories with you. More random conversations, more laughs, more annoying each other, more making up, more little moments that only make sense to us.
+<br><br>
+And if you'll let me… I'd really love to call you mine.
+</p>
+<div class="sign">With all my heart,<br><b>Ungkrr ♡</b></div>
+</div>
+</section>
+
+<section class="final" id="you"><div class="reveal" style="position:absolute;inset:0;pointer-events:none"></div>
+<div>
+<div class="kicker">So… one last question.</div>
+<h2>Will you be my girlfriend, Aurora?</h2>
+<div class="question">I don't need perfect. I just want us. ♡</div>
+<div class="actions">
+<button class="yes" onclick="sayYes()">Yes, I'll be yours! 💕</button>
+<button class="no" id="noBtn" onclick="moveNo()">Nope 🙈</button>
+</div>
+<div id="answer">
+<h2 style="font-size:42px;margin-bottom:8px">You said yes?! 🥹💕</h2>
+<p style="color:#f3dedb">Then let's make the next chapter even more beautiful. I love you, Aurora. ♡</p>
+</div>
+</div>
+</section>
+
+<footer>Made with too much love by Ungkrr, for Aurora ♡</footer>
+
+<script>
+function startLove(){
+  document.getElementById('intro').classList.add('hide');
+  const c=document.getElementById('countdown');
+  c.classList.remove('hide');
+  let n=3;
+  const el=document.getElementById('countNumber');
+  el.textContent=n;
+  const timer=setInterval(()=>{
+    n--;
+    if(n<=0){
+      clearInterval(timer);
+      c.classList.add('hide');
+      document.body.classList.add('started');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }else el.textContent=n;
+  },850);
+}
+function sayYes(){
+  document.getElementById('answer').classList.add('show');
+  for(let i=0;i<55;i++) setTimeout(makeHeart,i*35);
+  document.getElementById('answer').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function moveNo(){
+  const b=document.getElementById('noBtn');
+  b.style.position='fixed';
+  b.style.left=(8+Math.random()*78)+'vw';
+  b.style.top=(12+Math.random()*76)+'vh';
+  b.textContent=['Are you sure? 🥺','Try again 🙈','No escape! 😂','Think about it… 💗'][Math.floor(Math.random()*4)];
+}
+function makeHeart(){
+  const h=document.createElement('div'); h.className='heart';
+  h.textContent=['♡','♥','✦','✧','❀'][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+'vw'; h.style.fontSize=(12+Math.random()*25)+'px';
+  h.style.animationDuration=(4+Math.random()*5)+'s'; document.body.appendChild(h);
+  setTimeout(()=>h.remove(),9000);
+}
+setInterval(makeHeart,1200);
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.15});
+document.querySelectorAll('section').forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>
